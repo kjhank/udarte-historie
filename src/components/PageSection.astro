@@ -1,0 +1,28 @@
+---
+import { Debug } from 'astro/components';
+import type { HTMLAttributes } from 'astro/types';
+type Props = HTMLAttributes<'section'> & {
+  title: string;
+};
+ const {title, ...props } = Astro.props;
+---
+
+<style>
+  h2 {
+    padding: min(50px, 2.6vw);
+
+    font-family: var(--f-fam-1);
+    font-size: var(--f-s-m);
+    font-weight: 900;
+    color: var(--clr-accent);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+  }
+</style>
+
+<section {...props}>
+  <h2>{title}</h2>
+  <slot name="subtitle" />
+  <slot />
+</section>

@@ -1,0 +1,89 @@
+/* stylelint-disable custom-property-empty-line-before */
+@property --shadow-blur {
+  inherits: true;
+  initial-value: min(2.4vw, 46px);
+  syntax: '<length>';
+}
+
+@property --shadow-y {
+  inherits: true;
+  initial-value: min(2.76vw, 53px);
+  syntax: '<length>';
+}
+
+@property --shadow-x {
+  inherits: true;
+  initial-value: min(1.406vw, 27px);
+  syntax: '<length>';
+}
+
+:root {
+  --full-width: min(7.9688vw, 153px);
+  --content: min(12.3vw, 236px);
+  --narrow: min(60.833vw, 1168px);
+
+  --clr-1: #462136;
+  --clr-2: #f26611;
+  --clr-3: #fff;
+  --clr-4: #313133;
+  --clr-5: #f2f2f2;
+  --clr-6: #333;
+
+  --clr-text: var(--clr-1);
+  --clr-bg: var(--clr-3);
+  --clr-bg-alt: var(--clr-5);
+  --clr-text-alt: var(--clr-3);
+  --clr-accent: var(--clr-2);
+  --clr-shadow: rgb(from var(--clr-6) r g b / 10%);
+
+  /* TODO: prolly need to hardcode for old browsers */
+
+  --clr-tab-inactive: var(--clr-13);
+  --clr-tab-border: var(--clr-14);
+
+  --clr-downloads-border: var(--clr-13);
+
+  --f-fam-1: 'Proxima Nova', sans-serif;
+  --f-fam-2: 'Century Gothic', serif;
+  --f-w-normal: 400;
+  --f-w-medium: 500;
+  --f-w-bold: 700;
+  --f-w-extrabold: 900;
+  --t-default: 400ms;
+  --t-fast: calc(var(--t-default) / 2);
+  --t-slow: calc(var(--t-default) * 2);
+
+  --f-s-xxl: clamp(127px, 7.9688vw + 1rem, 169px);
+  --f-s-xl: clamp(123px, 7.71vw + 1rem, 164px);
+  --f-s-l: clamp(96px, 5.834vw + 1rem, 128px);
+  --f-s-m: clamp(27px, 1.042vw + 1rem, 36px);
+  --f-s-s: clamp(18px, 0.42vw + 1rem, 24px);
+  --f-s-xs: clamp(16.5px, 0.3125vw + 1rem, 22px);
+  --f-s-xxs: clamp(15px, 0.21vw + 1rem, 20px);
+  --f-s-tiny: clamp(12px, 0.9375rem, 15px);
+  --f-s-pico: clamp(6px, 0.5rem, 8px);
+
+  @media (width < 1200px) {
+    --f-s-xxl: clamp(101.6px, 6.375vw + 1rem, 135.2px);
+    --f-s-xl: clamp(98.4px, 6.168vw + 1rem, 131.2px);
+    --f-s-l: clamp(76.8px, 4.6672vw + 1rem, 102.4px);
+    --f-s-m: clamp(21.6px, 0.8336vw + 1rem, 28.8px);
+    --f-s-s: clamp(14.4px, 0.336vw + 1rem, 19.2px);
+    --f-s-xs: clamp(16.4px, 0.25vw + 1rem, 17.6px);
+    --f-s-xxs: clamp(12px, 0.168vw + 1rem, 16px);
+    --f-s-tiny: clamp(9.6px, 0.75rem, 12px);
+  }
+
+  @media (width < 1200px) {
+    --f-s-xxl: clamp(81.28px, 5.1vw + 1rem, 108.16px);
+    --f-s-xl: clamp(78.72px, 4.9344vw + 1rem, 104.96px);
+    --f-s-l: clamp(61.44px, 3.7338vw + 1rem, 81.92px);
+    --f-s-m: clamp(17.28px, 0.6669vw + 1rem, 23.04px);
+    --f-s-s: clamp(11.52px, 0.27vw + 1rem, 15.36px);
+    --f-s-xs: clamp(13.12px, 0.2vw + 1rem, 14.08px);
+    --f-s-xxs: clamp(9.6px, 0.134vw + 1rem, 12.8px);
+    --f-s-tiny: clamp(6.144px, 0.6rem, 9.6px);
+  }
+
+  @media (width < 480px) {}
+}

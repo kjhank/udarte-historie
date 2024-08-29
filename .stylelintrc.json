@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-clean-order",
+    "stylelint-config-html"
+  ],
+  "ignoreFiles": [
+    "**/*.ts",
+    "**/*.(cj|j)s"
+  ],
+  "plugins": [
+    "stylelint-use-logical"
+  ],
+  "rules": {
+    "csstools/use-logical": "always"
+  }
+}

@@ -1,0 +1,75 @@
+---
+import { getImage } from 'astro:assets';
+import type { HTMLAttributes } from 'astro/types';
+import background from '../assets/link-badge.png'
+import type { ImageMetadata } from 'astro';
+
+type Props = (HTMLAttributes<'a'> & {
+  href: string;
+} | HTMLAttributes<'button'> & {
+  href?: never;
+}) & {
+  backgroundSrc?: ImageMetadata;
+};
+
+const { backgroundSrc = background, href, ...props } = Astro.props;
+
+const image = await getImage({src: backgroundSrc, width: 230, height: 65});
+
+const propsWithImage = {
+  ...props,
+  style: {
+    backgroundImage: `url(${image.src})`,
+  }
+};
+---
+
+<style>
+  :is(a, button) {
+    cursor: pointer;
+
+    position: relative;
+
+    display: inline-grid;
+    place-items: center;
+
+    aspect-ratio: 3.585;
+    block-size: min(3.385vw, 65px);
+    padding-inline: 2%;
+
+    font-family: var(--f-fam-1);
+    font-size: var(--f-s-xxs);
+    font-weight: 600;
+    color: var(--clr-text-alt);
+    text-align: center;
+    text-decoration: none;
+
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 0;
+    border: none;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+
+      background: inherit;
+      background-size: contain;
+
+      transition: scale var(--t-fast);
+    }
+
+    &:hover {
+      z-index: 1;
+
+      &::after {
+        scale: 1.2;
+      }
+    }
+  }
+</style>
+
+{href ? <a href={href} {...propsWithImage}><slot /></a> : <button {...propsWithImage as HTMLAttributes<'button'>}><slot /></button>}

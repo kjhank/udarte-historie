@@ -1,0 +1,13 @@
+---
+import { Image } from 'astro:assets';
+import tapeImage from '../assets/tape.png'
+---
+
+<style>
+  .tape-image {
+    inline-size: min(56px, 2.92vw);
+    block-size: auto;
+  }
+</style>
+
+<Image alt="" class="tape-image" src={tapeImage} width={56} height={542} />

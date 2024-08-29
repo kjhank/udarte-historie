@@ -1,0 +1,94 @@
+---
+import ButtonLink from './ButtonLink.astro';
+import CoverImage from './CoverImage.astro';
+
+import moreBackground from '../assets/more-link-badge.png';
+
+---
+<style>
+  .page-header {
+    isolation: isolate;
+
+    background-image: linear-gradient(to bottom, #dcdcdc, #ebebeb), linear-gradient(to bottom, #131210, #040404);
+    background-repeat: no-repeat;
+    background-position: top left, top right;
+    background-size: 64vw 100%, 36vw 100%;
+
+    :is(.content, .cover-image) {
+      grid-row: 1;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: min(109px, 5.68vw);
+      align-items: flex-start;
+      justify-content: space-between;
+
+      padding-block: min(61px, 3.18vw) min(121px, 6.3vw);
+
+      .more {
+        display: grid;
+
+        block-size: min(78px, 4.0625vw);
+        margin-block-start: auto;
+
+        font-size: var(--f-s-s);
+        line-height: 1;
+        text-transform: uppercase;
+
+        @media (width < 1000px) {
+          block-size: auto;
+          /* padding-block: 0.05em; */
+        }
+      }
+
+      .scrollers {
+        > a {
+          display: inline-grid;
+
+          & + & {
+            margin-inline-start: min(34px, 1.78vw);
+          }
+        }
+      }
+    }
+  }
+
+  h1 {
+    grid-area: title;
+
+    font-family: var(--f-fam-2);
+    font-size: var(--f-s-xl);
+    line-height: 0.8;
+    color: var(--clr-accent);
+    text-transform: uppercase;
+
+    &::first-line {
+      font-size: var(--f-s-l);
+    }
+
+    > span {
+      font-size: var(--f-s-xxl);
+      color: var(--clr-4);
+    }
+  }
+
+</style>
+
+<header class="page-header">
+  <div class="grid container">
+    <CoverImage />
+    <div class="content">
+      <div class="scrollers">
+        <ButtonLink href="#stories">Historie</ButtonLink>
+        <ButtonLink href="#knowledge-base">Baza wiedzy</ButtonLink>
+      </div>
+      <h1>
+       <span>#Udar</span>te<br />
+       historie
+     </h1>
+     <ButtonLink class="more" backgroundSrc={moreBackground} href="#more">Dowiedz się więcej</ButtonLink>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,14 @@
+---
+import { Image } from 'astro:assets';
+import headerImage from '../assets/page-header.png'
+---
+
+<style>
+  .cover-image {
+    z-index: -1;
+    inline-size: 100%;
+    block-size: auto;
+  }
+</style>
+
+<Image alt="Twarz człowieka przed i po udarze" class="cover-image full-width" src={headerImage} width={1919} height={929} />

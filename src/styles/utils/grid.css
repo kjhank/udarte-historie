@@ -1,0 +1,23 @@
+.grid {
+  display: grid;
+  grid-template-columns: [full-start] minmax(0, var(--full-width)) [content-start] minmax(0, var(--content)) [narrow-start] minmax(0, var(--narrow)) [narrow-end] minmax(0, var(--content)) [content-end] minmax(0, var(--full-width)) [full-end];
+  inline-size: min(1920px, 100%);
+  margin-inline: auto;
+
+
+  & > :not(.narrow, .full-width, .grid-custom) {
+    grid-column: content;
+  }
+
+  & > .narrow {
+    grid-column: narrow;
+
+    @media (width < 900px) {
+      grid-column: content;
+    }
+  }
+
+  & > .full-width {
+    grid-column: full;
+  }
+}

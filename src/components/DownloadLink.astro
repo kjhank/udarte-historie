@@ -1,0 +1,79 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import { Debug } from 'astro:components';
+import ArrowStopIcon from './icons/ArrowStopIcon.astro';
+
+type Props = HTMLAttributes<'a'>;
+const { props } = Astro;
+
+const fileName = (props.href as string).split('/').at(-1);
+
+---
+
+<style>
+  a {
+    position: relative;
+
+    display: inline-flex;
+    gap: min(3vw, 57px);
+    align-items: center;
+
+    padding: min(2vw, 39px);
+
+    font-weight: var(--f-w-bold);
+    color: inherit;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    background-color: var(--clr-bg);
+
+    &::before {
+      content: '';
+
+      position: absolute;
+      inset: 0;
+
+      box-shadow: 0 var(--shadow-y) var(--shadow-blur) var(--clr-shadow);
+
+      transition: box-shadow var(--t-fast);
+    }
+
+    > svg {
+      display: grid;
+      flex-shrink: 0;
+      place-items: center;
+
+      box-sizing: content-box;
+      inline-size: min(21px, 1.0938vw);
+      block-size: auto;
+      padding: min(15px, 0.7813vw) min(17px, 0.89vw);
+
+      color: var(--clr-accent);
+
+      border: 2px solid var(--clr-accent);
+
+      .arrow {
+        transition: translate var(--t-fast);
+      }
+    }
+
+    &:hover {
+      &::before {
+        --shadow-blur: min(3.6vw, 69px);
+        --shadow-y: min(3.312vw, 63.6px);
+      }
+
+      > svg {
+        .arrow {
+          translate: 0 10%;
+        }
+      }
+    }
+
+  }
+</style>
+
+<a {...props} download={fileName}>
+  <ArrowStopIcon />
+  <slot />
+</a>

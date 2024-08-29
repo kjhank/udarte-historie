@@ -1,0 +1,71 @@
+---
+import DownloadLink from './DownloadLink.astro';
+import PageSection from './PageSection.astro';
+import Tape from './Tape.astro';
+---
+<style>
+  .section-knowledge-base {
+    position: relative;
+
+    &::before {
+      content: '';
+
+      position: absolute;
+
+      grid-column: 1 / 4;
+      grid-row: 3;
+
+      inline-size: 100%;
+      block-size: 100%;
+
+      background-color: var(--clr-bg);
+    }
+
+    .tape-image {
+      position: absolute;
+      grid-area: narrow;
+      grid-row: 3;
+      margin-block-start: max(-45px, -2.3438vw);
+
+      @media (width < 900px) {
+        grid-area: content;
+      }
+    }
+  }
+
+  .downloads {
+    padding-block: min(120px, 6.25vw);
+    padding-inline: min(192px, 10vw);
+    list-style-type: none;
+    background-color: var(--clr-bg);
+
+    li + li {
+      margin-block-start: min(1.35vw, 26px);
+    }
+  }
+
+  .subtitle {
+    margin-block-end: min(45px, 2.3438vw);
+
+    font-size: var(--f-s-xs);
+    font-weight: var(--f-w-bold);
+    color: var(--clr-1);
+    text-align: center;
+  }
+</style>
+
+<PageSection id="knowledge-base" class="grid section-knowledge-base" title="Baza wiedzy">
+  <p slot="subtitle" class="narrow subtitle">Materiały do pobrania</p>
+  <Tape />
+  <ul class="downloads narrow">
+    <li>
+      <DownloadLink href="/downloads/ZARIXA_udartehistorie_ulotka_2xDL_CELON_30_07_08_2024_GTO_DRUK (2).pdf">Pierwsze objawy udaru</DownloadLink>
+    </li>
+    <li>
+      <DownloadLink href="/downloads/ZARIXA_KV_UDARTE_A3_dark_woman_CELON_31_07_08_2024_GTO_prev.pdf">UDAR NIEDOKRWIENNY - JAK ZAPOBIEGAĆ</DownloadLink>
+    </li>
+    <li>
+      <DownloadLink href="/foo/bar/baz.pdf">Przyczyny udaru</DownloadLink>
+    </li>
+  </ul>
+</PageSection>

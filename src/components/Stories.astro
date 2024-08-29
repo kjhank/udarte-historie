@@ -1,0 +1,28 @@
+---
+import PageSection from './PageSection.astro';
+import VideoPlayer from './VideoPlayer.astro';
+import storiesPoster from '../assets/stories-poster.png';
+---
+
+<style>
+  .section-stories {
+    position: relative;
+
+    &::before {
+      content: '';
+
+      position: absolute;
+      z-index: -1;
+      inset-block: 0 min(140px, 7.2917vw);
+      inset-inline: -50vw;
+
+      background-color: var(--clr-bg);
+    }
+  }
+</style>
+
+<PageSection class="grid section-stories" id="stories" title="Historie">
+  <VideoPlayer videoProps={{
+    poster: storiesPoster.src,
+  }} />
+</PageSection>

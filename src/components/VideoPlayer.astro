@@ -1,0 +1,88 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+import { PlayButton } from './icons/index.astro';
+
+type Props = HTMLAttributes<'div'> & {
+  videoProps?: HTMLAttributes<'video'>;
+};
+
+const { videoProps, ...props} = Astro.props;
+---
+
+<style>
+  .video-player {
+    cursor: pointer;
+    display: grid;
+    grid-template: 'main';
+    place-items: center;
+
+    > * {
+      grid-area: main;
+    }
+  }
+
+  video {
+    max-inline-size: 100%;
+  }
+
+  button {
+    all: unset;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    display: block;
+
+    inline-size: 14.5%;
+
+    transition: scale var(--t-fast), opacity var(--t-fast);
+
+    > svg {
+      inline-size: 100%;
+      block-size: auto;
+    }
+
+    &.hidden {
+      scale: 0;
+      opacity: 0;
+    }
+  }
+</style>
+
+<script>
+  const video = document.querySelector('video');
+
+  const handleClick = async (event: Event) => {
+    const { target } = event;
+
+    if (!(target instanceof HTMLVideoElement)) return;
+
+    const { paused } = target;
+
+    if (paused) {
+      try {
+        await target.play();
+        target.querySelector('button')?.classList.add('hidden');
+        console.log('que');
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      target.querySelector('button')?.classList.remove('hidden');
+      target.pause();
+    }
+  }
+
+  video?.addEventListener('click', handleClick);
+</script>
+
+<div {...props} tabindex="0" class={`video-player narrow ${props.class ?? ''}`}>
+  <video {...videoProps}>
+    Video no comprendo
+  </video>
+  <button type="button" data-interaction="play">
+    <PlayButton />
+  </button>
+</div>
+
