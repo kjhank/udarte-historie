@@ -154,3 +154,5 @@ pnpm-debug.log*
 .idea/
 
 designs/
+
+public/videos/*
