@@ -27,6 +27,10 @@ import moreBackground from '../assets/more-link-badge.png';
 
       padding-block: min(61px, 3.18vw) min(121px, 6.3vw);
 
+      > .cover-image {
+        display: none;
+      }
+
       @media (width < 600px) {
         grid-column: full;
         gap: unset;
@@ -91,7 +95,9 @@ import moreBackground from '../assets/more-link-badge.png';
 
       > .container {
         > .cover-image {
-          @media (width < 600px) {
+          display: block;
+
+          &.portrait {
             display: none;
           }
         }
@@ -141,7 +147,7 @@ import moreBackground from '../assets/more-link-badge.png';
        <span>#Udar</span>te<br />
        historie
      </h1>
-     <ButtonLink class="more" backgroundSrc={moreBackground} href="#more">Dowiedz się więcej</ButtonLink>
+     <ButtonLink class="more" backgroundSrc={moreBackground} href="#knowledge-base">Dowiedz się więcej</ButtonLink>
     </div>
   </div>
 </header>
