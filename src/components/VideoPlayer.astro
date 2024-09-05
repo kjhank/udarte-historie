@@ -35,7 +35,8 @@ const paths = {
   video {
     max-inline-size: 100%;
 
-    &::-webkit-media-controls-overlay-play-button {
+    &::-webkit-media-controls-overlay-play-button,
+    .clickToPlay {
       display: none;
     }
   }
@@ -111,7 +112,7 @@ const paths = {
 </script>
 
 <div {...props} tabindex="0" class={`video-player narrow ${props.class ?? ''}`}>
-  <video {...videoProps} controls controlslist="timeline">
+  <video {...videoProps} controls playsinline>
     <source src={paths.webm} type="video/webm">
     <source src={paths.mp4} type="video/mp4">
     Pobierz wideo: <a href={paths.webm}>webm</a>, <a href={paths.mp4}>mp4</a>
