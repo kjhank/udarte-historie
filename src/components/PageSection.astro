@@ -7,6 +7,12 @@ type Props = HTMLAttributes<'section'> & {
 ---
 
 <style>
+  section {
+    @media (width < 600px) {
+      padding-block-start: min(42px, 11.2vw);
+    }
+  }
+
   h2 {
     padding: min(50px, 2.6vw);
 

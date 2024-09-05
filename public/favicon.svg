@@ -1,9 +1,204 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 128 128">
-    <path d="M50.4 78.5a75.1 75.1 0 0 0-28.5 6.9l24.2-65.7c.7-2 1.9-3.2 3.4-3.2h29c1.5 0 2.7 1.2 3.4 3.2l24.2 65.7s-11.6-7-28.5-7L67 45.5c-.4-1.7-1.6-2.8-2.9-2.8-1.3 0-2.5 1.1-2.9 2.7L50.4 78.5Zm-1.1 28.2Zm-4.2-20.2c-2 6.6-.6 15.8 4.2 20.2a17.5 17.5 0 0 1 .2-.7 5.5 5.5 0 0 1 5.7-4.5c2.8.1 4.3 1.5 4.7 4.7.2 1.1.2 2.3.2 3.5v.4c0 2.7.7 5.2 2.2 7.4a13 13 0 0 0 5.7 4.9v-.3l-.2-.3c-1.8-5.6-.5-9.5 4.4-12.8l1.5-1a73 73 0 0 0 3.2-2.2 16 16 0 0 0 6.8-11.4c.3-2 .1-4-.6-6l-.8.6-1.6 1a37 37 0 0 1-22.4 2.7c-5-.7-9.7-2-13.2-6.2Z" />
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+  <defs>
     <style>
-        path { fill: #000; }
-        @media (prefers-color-scheme: dark) {
-            path { fill: #FFF; }
-        }
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-15, .cls-16, .cls-17, .cls-18, .cls-19, .cls-20, .cls-21, .cls-22, .cls-23 {
+        isolation: isolate;
+      }
+
+      .cls-2, .cls-3, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-15, .cls-16, .cls-17, .cls-18, .cls-19, .cls-20, .cls-21, .cls-22, .cls-23 {
+        font-family: CenturyGothic-Bold, 'Century Gothic';
+        font-weight: 700;
+      }
+
+      .cls-2, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13, .cls-23 {
+        fill: #fff;
+      }
+
+      .cls-2, .cls-6, .cls-7, .cls-8, .cls-9, .cls-15, .cls-17, .cls-18, .cls-19, .cls-20 {
+        font-size: 3.5px;
+      }
+
+      .cls-3, .cls-13, .cls-14, .cls-23 {
+        font-size: 2.8px;
+      }
+
+      .cls-3, .cls-14, .cls-15, .cls-17, .cls-18, .cls-19, .cls-20 {
+        fill: #f36a10;
+      }
+
+      .cls-4 {
+        mix-blend-mode: multiply;
+      }
+
+      .cls-6, .cls-20 {
+        letter-spacing: 0em;
+      }
+
+      .cls-7, .cls-19 {
+        letter-spacing: 0em;
+      }
+
+      .cls-8, .cls-17 {
+        letter-spacing: 0em;
+      }
+
+      .cls-9, .cls-18 {
+        letter-spacing: 0em;
+      }
+
+      .cls-24 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-25 {
+        clip-path: url(#clippath-3);
+      }
+
+      .cls-26 {
+        clip-path: url(#clippath-4);
+      }
+
+      .cls-27 {
+        clip-path: url(#clippath-2);
+      }
+
+      .cls-28 {
+        clip-path: url(#clippath-5);
+      }
+
+      .cls-10, .cls-11, .cls-12, .cls-16, .cls-21, .cls-22 {
+        font-size: 3.6px;
+      }
+
+      .cls-10, .cls-22 {
+        letter-spacing: 0em;
+      }
+
+      .cls-11, .cls-21 {
+        letter-spacing: 0em;
+      }
+
+      .cls-13, .cls-14 {
+        letter-spacing: 0em;
+      }
+
+      .cls-29 {
+        opacity: .6;
+      }
+
+      .cls-16, .cls-21, .cls-22 {
+        fill: #313133;
+      }
+
+      .cls-30 {
+        clip-path: url(#clippath);
+      }
     </style>
+    <clipPath id="clippath">
+      <rect class="cls-1" x="1" y="4.6" width="13.9" height="7.1"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <rect class="cls-1" x="1" y="4.6" width="13.9" height="7.1"/>
+    </clipPath>
+    <clipPath id="clippath-2">
+      <rect class="cls-1" x="1" y="4.6" width="13.9" height="4.3"/>
+    </clipPath>
+    <clipPath id="clippath-3">
+      <rect class="cls-1" x="1.1" y="7.6" width="13.9" height="4.1"/>
+    </clipPath>
+    <clipPath id="clippath-4">
+      <rect class="cls-1" x="1" y="4.6" width="13.9" height="4.3"/>
+    </clipPath>
+    <clipPath id="clippath-5">
+      <rect class="cls-1" x="1.1" y="7.6" width="13.9" height="4.1"/>
+    </clipPath>
+  </defs>
+  <!-- Generator: Adobe Illustrator 28.6.0, SVG Export Plug-In . SVG Version: 1.2.0 Build 709)  -->
+  <g class="cls-5">
+    <g id="Layer_1">
+      <g class="cls-30">
+        <g id="Group_14880">
+          <g id="Group_14879">
+            <g class="cls-24">
+              <g id="Group_14878">
+                <g id="Group_14868" class="cls-29">
+                  <g id="Group_14867">
+                    <g class="cls-27">
+                      <g id="Group_14866">
+                        <g id="_UDAR" class="cls-5">
+                          <text class="cls-10" transform="translate(1 7.7)"><tspan x="0" y="0">#UD</tspan></text>
+                          <text class="cls-11" transform="translate(7.5 7.7)"><tspan x="0" y="0">A</tspan></text>
+                          <text class="cls-12" transform="translate(10.1 7.7)"><tspan x="0" y="0">R</tspan></text>
+                        </g>
+                        <g id="TE" class="cls-5">
+                          <text class="cls-13" transform="translate(12.4 7.7)"><tspan x="0" y="0">T</tspan></text>
+                          <text class="cls-23" transform="translate(13.4 7.7)"><tspan x="0" y="0">E</tspan></text>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+                <g id="Group_14871" class="cls-29">
+                  <g id="Group_14870">
+                    <g class="cls-25">
+                      <g id="Group_14869">
+                        <g id="HISTORIE" class="cls-5">
+                          <text class="cls-6" transform="translate(1.1 10.6)"><tspan x="0" y="0">H</tspan></text>
+                          <text class="cls-8" transform="translate(3.3 10.6)"><tspan x="0" y="0">I</tspan></text>
+                          <text class="cls-9" transform="translate(4.2 10.6)"><tspan x="0" y="0">S</tspan></text>
+                          <text class="cls-7" transform="translate(5.8 10.6)"><tspan x="0" y="0">TO</tspan></text>
+                          <text class="cls-6" transform="translate(9.9 10.6)"><tspan x="0" y="0">R</tspan></text>
+                          <text class="cls-7" transform="translate(11.8 10.6)"><tspan x="0" y="0">I</tspan></text>
+                          <text class="cls-2" transform="translate(12.6 10.6)"><tspan x="0" y="0">E</tspan></text>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+                <g id="Group_14874" class="cls-4">
+                  <g id="Group_14873">
+                    <g class="cls-26">
+                      <g id="Group_14872">
+                        <g id="_UDAR-2" class="cls-5">
+                          <text class="cls-22" transform="translate(1 7.7)"><tspan x="0" y="0">#UD</tspan></text>
+                          <text class="cls-21" transform="translate(7.5 7.7)"><tspan x="0" y="0">A</tspan></text>
+                          <text class="cls-16" transform="translate(10.1 7.7)"><tspan x="0" y="0">R</tspan></text>
+                        </g>
+                        <g id="TE-2" class="cls-5">
+                          <text class="cls-14" transform="translate(12.4 7.7)"><tspan x="0" y="0">T</tspan></text>
+                          <text class="cls-3" transform="translate(13.4 7.7)"><tspan x="0" y="0">E</tspan></text>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+                <g id="Group_14877" class="cls-4">
+                  <g id="Group_14876">
+                    <g class="cls-28">
+                      <g id="Group_14875">
+                        <g id="HISTORIE-2" class="cls-5">
+                          <text class="cls-20" transform="translate(1.1 10.6)"><tspan x="0" y="0">H</tspan></text>
+                          <text class="cls-17" transform="translate(3.3 10.6)"><tspan x="0" y="0">I</tspan></text>
+                          <text class="cls-18" transform="translate(4.2 10.6)"><tspan x="0" y="0">S</tspan></text>
+                          <text class="cls-19" transform="translate(5.8 10.6)"><tspan x="0" y="0">TO</tspan></text>
+                          <text class="cls-20" transform="translate(9.9 10.6)"><tspan x="0" y="0">R</tspan></text>
+                          <text class="cls-19" transform="translate(11.8 10.6)"><tspan x="0" y="0">I</tspan></text>
+                          <text class="cls-15" transform="translate(12.6 10.6)"><tspan x="0" y="0">E</tspan></text>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
 </svg>

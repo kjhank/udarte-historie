@@ -85,5 +85,8 @@
     --f-s-tiny: clamp(6.144px, 0.6rem, 9.6px);
   }
 
-  @media (width < 480px) {}
+  @media (width < 600px) {
+    --f-s-m: clamp(27px, 5.333vw + 1rem, 36px);
+    --f-s-xs: clamp(18px, 2.1333vw + 1rem, 24px)
+  }
 }

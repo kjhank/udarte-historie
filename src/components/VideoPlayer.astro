@@ -3,10 +3,16 @@ import type { HTMLAttributes } from 'astro/types'
 import { PlayButton } from './icons/index.astro';
 
 type Props = HTMLAttributes<'div'> & {
+  fileName: string;
   videoProps?: HTMLAttributes<'video'>;
 };
 
-const { videoProps, ...props} = Astro.props;
+const { fileName, videoProps, ...props} = Astro.props;
+
+const paths = {
+  mp4: `/videos/${fileName}.mp4`,
+  webm: `/videos/${fileName}.webm`,
+};
 ---
 
 <style>
@@ -52,34 +58,53 @@ const { videoProps, ...props} = Astro.props;
 
 <script>
   const video = document.querySelector('video');
+  const handlePlayback = (event: Event) => {
+
+    const { target } = event;
+    if (!(target instanceof HTMLVideoElement)) return;
+
+    if (event.type === 'play') {
+
+      target.nextElementSibling?.classList.add('hidden');
+    }
+
+    if (event.type === 'pause') {
+
+      target.nextElementSibling?.classList.remove('hidden');
+    }
+  }
 
   const handleClick = async (event: Event) => {
+    event.preventDefault();
     const { target } = event;
 
     if (!(target instanceof HTMLVideoElement)) return;
+
 
     const { paused } = target;
 
     if (paused) {
       try {
         await target.play();
-        target.querySelector('button')?.classList.add('hidden');
-        console.log('que');
       } catch (error) {
-        console.log(error);
+
       }
     } else {
-      target.querySelector('button')?.classList.remove('hidden');
       target.pause();
     }
   }
 
   video?.addEventListener('click', handleClick);
+  video?.addEventListener('play', handlePlayback);
+  video?.addEventListener('pause', handlePlayback);
 </script>
 
 <div {...props} tabindex="0" class={`video-player narrow ${props.class ?? ''}`}>
-  <video {...videoProps}>
-    Video no comprendo
+  <video {...videoProps} controls controlslist="timeline">
+    <source src={paths.webm} type="video/webm">
+    <source src={paths.mp4} type="video/mp4">
+    Pobierz wideo: <a href={paths.webm}>webm</a>, <a href={paths.mp4}>mp4</a>
+    <track kind="subtitles" srclang="pl" src={`/videos/${fileName}.vtt`} >
   </video>
   <button type="button" data-interaction="play">
     <PlayButton />

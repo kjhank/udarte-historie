@@ -9,7 +9,7 @@ import moreBackground from '../assets/more-link-badge.png';
   .page-header {
     isolation: isolate;
 
-    background-image: linear-gradient(to bottom, #dcdcdc, #ebebeb), linear-gradient(to bottom, #131210, #040404);
+    background-image: linear-gradient(to bottom, #ececec, #ececec), linear-gradient(to bottom, #010101, #010101);
     background-repeat: no-repeat;
     background-position: top left, top right;
     background-size: 64vw 100%, 36vw 100%;
@@ -27,6 +27,21 @@ import moreBackground from '../assets/more-link-badge.png';
 
       padding-block: min(61px, 3.18vw) min(121px, 6.3vw);
 
+      @media (width < 600px) {
+        grid-column: full;
+        gap: unset;
+        padding-block: unset;
+
+        > .cover-image {
+          display: none;
+
+          &.portrait {
+            display: block;
+          }
+        }
+      }
+    }
+
       .more {
         display: grid;
 
@@ -39,7 +54,10 @@ import moreBackground from '../assets/more-link-badge.png';
 
         @media (width < 1000px) {
           block-size: auto;
-          /* padding-block: 0.05em; */
+        }
+
+        @media (width < 600px) {
+          margin-inline: auto;
         }
       }
 
@@ -51,7 +69,37 @@ import moreBackground from '../assets/more-link-badge.png';
             margin-inline-start: min(34px, 1.78vw);
           }
         }
+
+        @media (width < 600px) {
+          display: flex;
+          gap: 6.133vw;
+          justify-content: center;
+
+          inline-size: 100%;
+          padding-block: 6.93vw;
+
+          background-color: var(--clr-bg);
+
+          > a {
+            display: grid;
+            aspect-ratio: 3.581;
+            inline-size: 41.07vw;
+            block-size: unset;
+          }
+        }
       }
+
+      > .container {
+        > .cover-image {
+          @media (width < 600px) {
+            display: none;
+          }
+        }
+      }
+
+    @media (width < 600px) {
+      background-color: var(--clr-bg);
+      background-image: unset;
     }
   }
 
@@ -72,18 +120,23 @@ import moreBackground from '../assets/more-link-badge.png';
       font-size: var(--f-s-xxl);
       color: var(--clr-4);
     }
-  }
 
+    @media (width < 600px) {
+      margin-block: min(22px, 5.87vw);
+      margin-inline: auto;
+    }
+  }
 </style>
 
 <header class="page-header">
   <div class="grid container">
-    <CoverImage />
+    <CoverImage  />
     <div class="content">
       <div class="scrollers">
         <ButtonLink href="#stories">Historie</ButtonLink>
         <ButtonLink href="#knowledge-base">Baza wiedzy</ButtonLink>
       </div>
+      <CoverImage />
       <h1>
        <span>#Udar</span>te<br />
        historie

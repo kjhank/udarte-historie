@@ -41,6 +41,14 @@ import Tape from './Tape.astro';
 
     li + li {
       margin-block-start: min(1.35vw, 26px);
+
+      @media (width < 600px) {
+        margin-block-start: min(42px, 11.2vw);
+      }
+    }
+
+    @media (width < 600px) {
+      padding: min(27px, 4.8vw);
     }
   }
 
@@ -65,7 +73,7 @@ import Tape from './Tape.astro';
       <DownloadLink href="/downloads/ZARIXA_KV_UDARTE_A3_dark_woman_CELON_31_07_08_2024_GTO_prev.pdf">UDAR NIEDOKRWIENNY - JAK ZAPOBIEGAĆ</DownloadLink>
     </li>
     <li>
-      <DownloadLink href="/foo/bar/baz.pdf">Przyczyny udaru</DownloadLink>
+      <DownloadLink href="/downloads/ZARIXA_PLAKAT_UDAR_A3_CELON_29_16_07_2024_v3_prev (9).pdf">Przyczyny udaru</DownloadLink>
     </li>
   </ul>
 </PageSection>
