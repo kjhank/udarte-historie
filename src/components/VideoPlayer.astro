@@ -9,10 +9,15 @@ type Props = HTMLAttributes<'div'> & {
 
 const { fileName, videoProps, ...props} = Astro.props;
 
+const isDev = import.meta.env.DEV;
+
+const prefix = isDev ? '' : import.meta.env.VIDEO_PREFIX;
+
 const paths = {
-  mp4: `/videos/${fileName}.mp4`,
-  webm: `/videos/${fileName}.webm`,
+  mp4: `${prefix}/videos/${fileName}.mp4`,
+  webm: `${prefix}/videos/${fileName}.webm`,
 };
+
 ---
 
 <style>
@@ -114,6 +119,7 @@ const paths = {
   </video>
   <button type="button" data-interaction="play">
     <PlayButton />
+    {prefix}
   </button>
 </div>
 
