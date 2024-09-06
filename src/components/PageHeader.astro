@@ -14,7 +14,7 @@ import moreBackground from '../assets/more-link-badge.png';
     background-position: top left, top right;
     background-size: 64vw 100%, 36vw 100%;
 
-    :is(.content, .cover-image) {
+    .content, .cover-image {
       grid-row: 1;
     }
 
@@ -27,22 +27,10 @@ import moreBackground from '../assets/more-link-badge.png';
 
       padding-block: min(61px, 3.18vw) min(121px, 6.3vw);
 
-      > .cover-image {
-        display: none;
-      }
-
       @media (width < 600px) {
         grid-column: full;
         gap: unset;
         padding-block: unset;
-
-        > .cover-image {
-          display: none;
-
-          &.portrait {
-            display: block;
-          }
-        }
       }
     }
 
@@ -62,6 +50,8 @@ import moreBackground from '../assets/more-link-badge.png';
 
         @media (width < 600px) {
           margin-inline: auto;
+          padding-inline: 8%;
+          text-wrap: balance;
         }
       }
 
@@ -89,16 +79,6 @@ import moreBackground from '../assets/more-link-badge.png';
             aspect-ratio: 3.581;
             inline-size: 41.07vw;
             block-size: unset;
-          }
-        }
-      }
-
-      > .container {
-        > .cover-image {
-          display: block;
-
-          &.portrait {
-            display: none;
           }
         }
       }
@@ -142,7 +122,7 @@ import moreBackground from '../assets/more-link-badge.png';
         <ButtonLink href="#stories">Historie</ButtonLink>
         <ButtonLink href="#knowledge-base">Baza wiedzy</ButtonLink>
       </div>
-      <CoverImage />
+      <CoverImage class="in-content" />
       <h1>
        <span>#Udar</span>te<br />
        historie

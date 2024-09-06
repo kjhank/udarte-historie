@@ -8,6 +8,12 @@ type Props = HTMLAttributes<'section'> & {
 
 <style>
   section {
+    overflow: hidden;
+
+    @supports (overflow: clip) {
+       overflow: clip;
+    }
+
     @media (width < 600px) {
       padding-block-start: min(42px, 11.2vw);
     }

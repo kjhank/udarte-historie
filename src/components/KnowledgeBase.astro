@@ -19,16 +19,9 @@ import Tape from './Tape.astro';
       block-size: 100%;
 
       background-color: var(--clr-bg);
-    }
 
-    .tape-image {
-      position: absolute;
-      grid-area: narrow;
-      grid-row: 3;
-      margin-block-start: max(-45px, -2.3438vw);
-
-      @media (width < 900px) {
-        grid-area: content;
+      @media (width < 600px) {
+        grid-row: 3 / 4;
       }
     }
   }
@@ -48,7 +41,7 @@ import Tape from './Tape.astro';
     }
 
     @media (width < 600px) {
-      padding: min(27px, 4.8vw);
+      padding: min(54px, 9.6vw) min(27px, 4.8vw);
     }
   }
 

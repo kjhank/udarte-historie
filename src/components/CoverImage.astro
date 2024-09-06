@@ -2,18 +2,34 @@
 import { Picture } from 'astro:assets';
 import headerImage from '../assets/page-header.jpg'
 import headerImagePortrait from '../assets/page-header-portrait.png'
+
+const { class: className } = Astro.props;
 ---
 
 <style>
   .cover-image {
     z-index: -1;
+    grid-row: 1;
 
     > img {
       inline-size: 100%;
       block-size: auto;
     }
+
+    &.in-content,
+    &.portrait {
+      display: none;
+    }
+
+    @media (width < 600px) {
+      display: none;
+
+      &.in-content.portrait {
+        display: block;
+      }
+    }
   }
 </style>
 
-<Picture pictureAttributes={{ class: 'cover-image full-width' }} alt="Twarz człowieka przed i po udarze" formats={["avif", "webp"]} src={headerImage} width={1920} height={930} />
-<Picture pictureAttributes={{ class: 'cover-image portrait full-width' }} alt="Twarz człowieka przed i po udarze" formats={["avif", "webp"]} src={headerImagePortrait} width={750} height={859} />
+<Picture pictureAttributes={{ class: `cover-image full-width ${className ?? ''}` }} alt="Twarz człowieka przed i po udarze" formats={["avif", "webp"]} src={headerImage} width={1920} height={930} />
+<Picture pictureAttributes={{ class: `cover-image portrait full-width ${className ?? ''}` }} alt="Twarz człowieka przed i po udarze" formats={["avif", "webp"]} src={headerImagePortrait} width={750} height={859} />

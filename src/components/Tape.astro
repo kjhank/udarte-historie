@@ -5,8 +5,22 @@ import tapeImage from '../assets/tape.png'
 
 <style>
   .tape-image {
+    position: absolute;
+
+    grid-area: narrow;
+    grid-row: 3;
+
     inline-size: min(56px, 2.92vw);
     block-size: auto;
+    margin-block-start: max(-45px, -2.3438vw);
+
+    @media (width < 900px) {
+      grid-area: content;
+    }
+
+    @media (width < 600px) {
+      inline-size: min(27px, 7.2vw);
+    }
   }
 </style>
 
