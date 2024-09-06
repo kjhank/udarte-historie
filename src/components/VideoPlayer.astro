@@ -67,48 +67,43 @@ const paths = {
 
 <script>
   const isTouch = 'ontouchstart' in window;
+  const triggerEvent = isTouch ? 'touchstart' : 'click';
   const video = document.querySelector('video');
-  const handlePlayback = (event: Event) => {
 
+  const handlePlay = async (event: Event) => {
+    const { target } = event;
+    if (!(target instanceof HTMLVideoElement)) return;
+
+    await target.play();
+
+    target.removeEventListener(triggerEvent, handlePlay);
+    target.addEventListener(triggerEvent, handlePause);
+  }
+
+  const handlePause = (event: Event) => {
+    const { target } = event;
+    if (!(target instanceof HTMLVideoElement)) return;
+
+    target.pause();
+
+    target.removeEventListener(triggerEvent, handlePause);
+    target.addEventListener(triggerEvent, handlePlay);
+  }
+
+  const handlePlayback = (event: Event) => {
     const { target } = event;
     if (!(target instanceof HTMLVideoElement)) return;
 
     if (event.type === 'play') {
       target.nextElementSibling?.classList.add('hidden');
-      if (!isTouch) {
-        target.removeEventListener('click', handleClick);
-      }
     }
 
     if (event.type === 'pause') {
       target.nextElementSibling?.classList.remove('hidden');
-      if (!isTouch) {
-        target.addEventListener('click', handleClick);
-      }
     }
   }
 
-  const handleClick = async (event: Event) => {
-    event.preventDefault();
-    console.log(event);
-    const { currentTarget } = event;
-
-    if (!(currentTarget instanceof HTMLVideoElement)) return;
-
-    const { paused, ...rest } = currentTarget;
-
-    console.log(paused);
-
-    if (paused) {
-      await currentTarget.play();
-    } else {
-      currentTarget.pause();
-    }
-  }
-
-  if (!isTouch) {
-    video?.addEventListener('click', handleClick);
-  }
+  video?.addEventListener(triggerEvent, handlePlay);
   video?.addEventListener('play', handlePlayback);
   video?.addEventListener('pause', handlePlayback);
 </script>
