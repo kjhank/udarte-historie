@@ -113,7 +113,7 @@ const paths = {
     <source src={paths.webm} type="video/webm">
     <source src={paths.mp4} type="video/mp4">
     Pobierz wideo: <a href={paths.webm}>webm</a>, <a href={paths.mp4}>mp4</a>
-    <track kind="subtitles" srclang="pl" src={`/videos/${fileName}.vtt`} >
+    <track default kind="subtitles" srclang="pl" src={`/videos/${fileName}.vtt`} >
   </video>
   <button type="button" data-interaction="play">
     <PlayButton />
