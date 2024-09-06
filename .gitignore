@@ -155,4 +155,5 @@ pnpm-debug.log*
 
 designs/
 
-public/videos/*
+public/videos/*.webm
+public/videos/*.mp4
