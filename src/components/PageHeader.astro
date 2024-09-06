@@ -45,10 +45,11 @@ import moreBackground from '../assets/more-link-badge.png';
         text-transform: uppercase;
 
         @media (width < 1000px) {
-          block-size: auto;
+          block-size: min(60px, 6vw);
         }
 
         @media (width < 600px) {
+          block-size: min(60px, 16vw);
           margin-inline: auto;
           padding-inline: 8%;
           text-wrap: balance;
