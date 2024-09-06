@@ -83,7 +83,7 @@ const fileName = (props.href as string).split('/').at(-1);
   }
 </style>
 
-<a {...props} download={fileName}>
+<a {...props} target="_blank" rel="noopener noreferrer">
   <ArrowStopIcon />
   <slot />
 </a>
