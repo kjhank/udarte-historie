@@ -66,6 +66,7 @@ const paths = {
 </style>
 
 <script>
+  const isTouch = 'ontouchstart' in window;
   const video = document.querySelector('video');
   const handlePlayback = (event: Event) => {
 
@@ -73,39 +74,41 @@ const paths = {
     if (!(target instanceof HTMLVideoElement)) return;
 
     if (event.type === 'play') {
-
       target.nextElementSibling?.classList.add('hidden');
+      if (!isTouch) {
+        target.removeEventListener('click', handleClick);
+      }
     }
 
     if (event.type === 'pause') {
-
       target.nextElementSibling?.classList.remove('hidden');
+      if (!isTouch) {
+        target.addEventListener('click', handleClick);
+      }
     }
   }
 
   const handleClick = async (event: Event) => {
-
     event.preventDefault();
+    console.log(event);
     const { currentTarget } = event;
 
     if (!(currentTarget instanceof HTMLVideoElement)) return;
 
-    const { paused } = currentTarget;
+    const { paused, ...rest } = currentTarget;
+
+    console.log(paused);
 
     if (paused) {
-      try {
-        await currentTarget.play();
-      } catch (error) {
-
-      }
+      await currentTarget.play();
     } else {
       currentTarget.pause();
     }
   }
 
-  const isTouch = 'ontouchstart' in window;
-
-  video?.addEventListener(isTouch ? 'pointerup' : 'click', handleClick);
+  if (!isTouch) {
+    video?.addEventListener('click', handleClick);
+  }
   video?.addEventListener('play', handlePlayback);
   video?.addEventListener('pause', handlePlayback);
 </script>
